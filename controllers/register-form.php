@@ -25,6 +25,7 @@ if (isset($_POST['submit'])) {
                     if ($requete->execute()) {
                         $message = 'Utilisateur enregistré';
                         envoyerMailConfirmation($email);
+                        genererToken();
                     } else {
                         $message = 'Erreur lors de l\'enregistrement';
                     }

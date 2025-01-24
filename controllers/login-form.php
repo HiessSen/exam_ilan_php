@@ -18,6 +18,7 @@ if (isset($_POST['submit'])) {
                 // Démarrer une session ou définir des cookies ici
                 session_start();
                 $_SESSION['user'] = $email;
+                verifierToken($_SESSION['user']);
                 header('Location: index.php');
             } else {
                 // Informations de connexion incorrectes
